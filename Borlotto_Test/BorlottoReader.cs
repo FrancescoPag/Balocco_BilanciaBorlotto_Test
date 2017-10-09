@@ -171,12 +171,11 @@ namespace Borlotto_Test
                     //Guid serviceGuid = new Guid("00000000-0000-0000-0000-000000000000");
                     //Guid guid2 = new Guid("e0cbf06c-cd8b-4647-bb8a-263b43f0f974");
                     //localClient.Connect(device.DeviceAddress, guid2);
-                    
+                    logger.Trace($"Trying to connect to {device.DeviceName}");
                     localClient.Connect(device.DeviceAddress, BluetoothService.SerialPort);
                     Console.Write($"{device.DeviceName} is now connected: {device.Connected}");
                     logger.Debug($"Device {device.DeviceName} connected.");
                     
-
                     /*
                     BluetoothEndPoint remoteEndPoint = new BluetoothEndPoint(device.DeviceAddress, BluetoothService.SerialPort);
                     BluetoothClient remoteClient = new BluetoothClient(remoteEndPoint);
